@@ -34,6 +34,18 @@ return (
     </>
 )
 
+if('error' in resp) 
+return (
+    <>
+          <div className="card">
+        <div className="card-body">
+        <h5 className="card-title">Authentication failed with JWT react-jwt package</h5>
+                <pre>{JSON.stringify(resp, null, 4)}</pre>
+        </div>
+        </div>
+    </>
+)
+
 
 return (
     <>
@@ -50,7 +62,7 @@ return (
                 name="email"
                 className="form-control"
                 id="inputEmail"
-                value="eve.holt@reqres.in"
+                defaultValue="eve.holt@reqres.in"
                 style={{ maxWidth: "300px" }}
               />
             </div>
@@ -63,7 +75,7 @@ return (
               <input
                 type="password"
                 name="password"
-                value="cityslicka"
+                defaultValue="cityslicka"
                 className="form-control"
                 id="inputPassword"
                 style={{ maxWidth: "300px" }}
